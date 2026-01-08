@@ -1,0 +1,121 @@
+{
+  "obligations": [
+    {
+      "id": "obl_001",
+      "category": "Financial",
+      "obligationType": "Maintenance Covenant",
+      "description": "Borrower must maintain Leverage Ratio below target",
+      "target": "< 4.50x",
+      "frequency": "Quarterly",
+      "dueDate": "Quarter End + 45 Days",
+      "parties": [
+        "Borrower",
+        "Administrative Agent"
+      ],
+      "severityIfBreached": "Critical",
+      "provenance": {
+        "doc": "Facility Agreement v4.0",
+        "sectionRef": "Section 22.1(b)",
+        "clauseText": "The Leverage Ratio in respect of any Relevant Period shall not exceed 4.50:1"
+      },
+      "confidence": 0.98
+    },
+    {
+      "id": "obl_002",
+      "category": "Reporting",
+      "obligationType": "Compliance Certificate",
+      "description": "Submission of Compliance Certificate signed by valid officer",
+      "target": "Delivery",
+      "frequency": "Quarterly",
+      "dueDate": "Quarter End + 45 Days",
+      "parties": [
+        "Borrower"
+      ],
+      "severityIfBreached": "High",
+      "provenance": {
+        "doc": "Facility Agreement v4.0",
+        "sectionRef": "Section 21.2",
+        "clauseText": "The Borrower shall supply to the Agent a Compliance Certificate..."
+      },
+      "confidence": 0.99
+    }
+  ],
+  "changeEvents": [
+    {
+      "id": "chg_001",
+      "changeType": "ThresholdChanged",
+      "affectedObligationIds": [
+        "obl_001"
+      ],
+      "beforeText": "4.00:1",
+      "afterText": "4.50:1",
+      "materialityScore": 85,
+      "rationale": "Covenant relaxation increases borrower headroom but raises credit risk profile.",
+      "provenance": {
+        "doc": "Amendment No. 3",
+        "sectionRef": "Section 2.1"
+      },
+      "confidence": 0.97
+    },
+    {
+      "id": "chg_002",
+      "changeType": "DefinitionChanged",
+      "affectedObligationIds": [],
+      "beforeText": "Consolidated EBITDA means...",
+      "afterText": "Consolidated EBITDA means... plus (x) one-time restructuring charges...",
+      "materialityScore": 72,
+      "rationale": "Expanded EBITDA definition allows for add-backs, effectively lowering the calculated leverage ratio.",
+      "provenance": {
+        "doc": "Amendment No. 3",
+        "sectionRef": "Section 2.2"
+      },
+      "confidence": 0.92
+    }
+  ],
+  "evidencePack": {
+    "executiveSummary": "Amendment No. 3 modifies the Financial Covenants by increasing the Leverage Ratio threshold and expanding the definition of Consolidated EBITDA.",
+    "keyRisks": [
+      "Increased leverage tolerance",
+      "EBITDA quality dilution via add-backs"
+    ],
+    "checklistItems": [
+      "Verify effectiveness conditions",
+      "Update internal rate grids",
+      "Notify credit risk management"
+    ],
+    "annexes": [
+      "amendment_n3_executed.pdf",
+      "conformed_credit_agreement.pdf"
+    ],
+    "exports": {
+      "jsonSchemaVersion": "1.0.0",
+      "obligationsJson": "/exports/job_123/obligations.json",
+      "changeEventsJson": "/exports/job_123/changes.json"
+    }
+  },
+  "enums": {
+    "category": [
+      "Financial",
+      "Reporting",
+      "Transfer",
+      "Definitions",
+      "ESG",
+      "Other"
+    ],
+    "changeType": [
+      "Added",
+      "Removed",
+      "ThresholdChanged",
+      "FrequencyChanged",
+      "DefinitionChanged",
+      "DeadlineChanged",
+      "PartyChanged"
+    ],
+    "severityIfBreached": [
+      "Low",
+      "Medium",
+      "High",
+      "Critical"
+    ]
+  }
+}

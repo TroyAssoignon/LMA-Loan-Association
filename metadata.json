@@ -1,0 +1,5 @@
+{
+  "name": "Amendment Radar",
+  "description": "A banker-grade prototype for automated syndicated loan amendment analysis, material change detection, and obligation extraction.",
+  "requestFramePermissions": []
+}
